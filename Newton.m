@@ -7,9 +7,9 @@ function x0 = Newton(fx, initial, tolerance, maxIter, busquedaLineal, xx, yy)
             tolerance: Tolerancia aceptada.
             maxIter: Cantidad máxima de iteraciones.
             busquedaLineal: Tipo de búsqueda lineal como string;
-                Bisección
+                Aurea
                 Wolfe.
-                Despeje
+                Biseccion
             xx: Intervalo del eje x en forma de vector fila.
             yy: Intervalo del eje y en forma de vector fila.
     %}
@@ -47,9 +47,9 @@ function x0 = Newton(fx, initial, tolerance, maxIter, busquedaLineal, xx, yy)
 
             % Selección del método de búsqueda lineal
             switch busquedaLineal
-                case 'Despeje'
+                case 'Aurea'
                     alfa = 1;
-                case 'Bisection'
+                case 'Biseccion'
                     d2 = transpose(d);
                     alfa = biseccion(f, var, x0, d2, tol, maxIter);
                 case 'Wolfe'
